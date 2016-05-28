@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4762CF3409864902CDC823BF /* libPods-我看电影.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A70D7B1F1F5B47713BE3DFC7 /* libPods-我看电影.a */; };
 		AB314DDC1CF81EE900DD55B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314DDB1CF81EE900DD55B5 /* main.m */; };
 		AB314DDF1CF81EE900DD55B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314DDE1CF81EE900DD55B5 /* AppDelegate.m */; };
-		AB314DE21CF81EE900DD55B5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314DE11CF81EE900DD55B5 /* ViewController.m */; };
-		AB314DE51CF81EE900DD55B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB314DE31CF81EE900DD55B5 /* Main.storyboard */; };
 		AB314DE71CF81EE900DD55B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB314DE61CF81EE900DD55B5 /* Assets.xcassets */; };
 		AB314DEA1CF81EE900DD55B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB314DE81CF81EE900DD55B5 /* LaunchScreen.storyboard */; };
 		AB314DF51CF81EE900DD55B5 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314DF41CF81EE900DD55B5 /* ____Tests.m */; };
 		AB314E001CF81EE900DD55B5 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314DFF1CF81EE900DD55B5 /* ____UITests.m */; };
+		AB314E141CF81F9900DD55B5 /* WKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314E131CF81F9900DD55B5 /* WKMainViewController.m */; };
+		AB314E171CF81FC100DD55B5 /* WKMovieData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314E161CF81FC100DD55B5 /* WKMovieData.m */; };
+		AB61B4891CF8250B00A16974 /* WKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AB61B4881CF8250B00A16974 /* WKTool.m */; };
+		AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8519071CF996C1004ACA6E /* WKMovieCell.m */; };
+		AB8519101CF9ACFD004ACA6E /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */; };
+		AC18787FF96B7D50F2A58F07 /* libPods-我看电影UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8739E4A5F5C0712C1D805C4F /* libPods-我看电影UITests.a */; };
+		E09E699BC23666B12F708A17 /* libPods-我看电影Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19ECAE99DD4964FA683AF4 /* libPods-我看电影Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E058A3F53B72843CD8B7E0F /* Pods-我看电影Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影Tests/Pods-我看电影Tests.release.xcconfig"; sourceTree = "<group>"; };
+		6E19ECAE99DD4964FA683AF4 /* libPods-我看电影Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-我看电影Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7255DC247617911B8CE735AF /* Pods-我看电影UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影UITests/Pods-我看电影UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8739E4A5F5C0712C1D805C4F /* libPods-我看电影UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-我看电影UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70D7B1F1F5B47713BE3DFC7 /* libPods-我看电影.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-我看电影.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB314DD71CF81EE900DD55B5 /* 我看电影.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "我看电影.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB314DDB1CF81EE900DD55B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB314DDD1CF81EE900DD55B5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB314DDE1CF81EE900DD55B5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AB314DE01CF81EE900DD55B5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AB314DE11CF81EE900DD55B5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AB314DE41CF81EE900DD55B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB314DE61CF81EE900DD55B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB314DE91CF81EE900DD55B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB314DEB1CF81EE900DD55B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +59,20 @@
 		AB314DFB1CF81EE900DD55B5 /* 我看电影UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "我看电影UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB314DFF1CF81EE900DD55B5 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
 		AB314E011CF81EE900DD55B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB314E121CF81F9900DD55B5 /* WKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMainViewController.h; sourceTree = "<group>"; };
+		AB314E131CF81F9900DD55B5 /* WKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMainViewController.m; sourceTree = "<group>"; };
+		AB314E151CF81FC100DD55B5 /* WKMovieData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieData.h; sourceTree = "<group>"; };
+		AB314E161CF81FC100DD55B5 /* WKMovieData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieData.m; sourceTree = "<group>"; };
+		AB61B4871CF8250B00A16974 /* WKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTool.h; sourceTree = "<group>"; };
+		AB61B4881CF8250B00A16974 /* WKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTool.m; sourceTree = "<group>"; };
+		AB8519061CF996C1004ACA6E /* WKMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieCell.h; sourceTree = "<group>"; };
+		AB8519071CF996C1004ACA6E /* WKMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieCell.m; sourceTree = "<group>"; };
+		AB85190E1CF9ACFD004ACA6E /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
+		B1E5F4853683583FA6F30134 /* Pods-我看电影.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影.release.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影/Pods-我看电影.release.xcconfig"; sourceTree = "<group>"; };
+		DC21BE97E70E268E7369DE08 /* Pods-我看电影UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影UITests/Pods-我看电影UITests.release.xcconfig"; sourceTree = "<group>"; };
+		E86FC029A3AAE016E1B3859C /* Pods-我看电影Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影Tests/Pods-我看电影Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		F488957B5ACDF44AA946158B /* Pods-我看电影.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影.debug.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影/Pods-我看电影.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4762CF3409864902CDC823BF /* libPods-我看电影.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09E699BC23666B12F708A17 /* libPods-我看电影Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +96,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC18787FF96B7D50F2A58F07 /* libPods-我看电影UITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98AD7B3E674C5DBC7CE79101 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A70D7B1F1F5B47713BE3DFC7 /* libPods-我看电影.a */,
+				6E19ECAE99DD4964FA683AF4 /* libPods-我看电影Tests.a */,
+				8739E4A5F5C0712C1D805C4F /* libPods-我看电影UITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB314DCE1CF81EE900DD55B5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +120,8 @@
 				AB314DF31CF81EE900DD55B5 /* 我看电影Tests */,
 				AB314DFE1CF81EE900DD55B5 /* 我看电影UITests */,
 				AB314DD81CF81EE900DD55B5 /* Products */,
+				BB6ACA4C7213AD63DE8AA936 /* Pods */,
+				98AD7B3E674C5DBC7CE79101 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +138,9 @@
 		AB314DD91CF81EE900DD55B5 /* 我看电影 */ = {
 			isa = PBXGroup;
 			children = (
+				AB314E0D1CF81F7F00DD55B5 /* Class */,
 				AB314DDD1CF81EE900DD55B5 /* AppDelegate.h */,
 				AB314DDE1CF81EE900DD55B5 /* AppDelegate.m */,
-				AB314DE01CF81EE900DD55B5 /* ViewController.h */,
-				AB314DE11CF81EE900DD55B5 /* ViewController.m */,
-				AB314DE31CF81EE900DD55B5 /* Main.storyboard */,
 				AB314DE61CF81EE900DD55B5 /* Assets.xcassets */,
 				AB314DE81CF81EE900DD55B5 /* LaunchScreen.storyboard */,
 				AB314DEB1CF81EE900DD55B5 /* Info.plist */,
@@ -140,6 +175,108 @@
 			path = "我看电影UITests";
 			sourceTree = "<group>";
 		};
+		AB314E0D1CF81F7F00DD55B5 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				AB85190A1CF9ACD5004ACA6E /* Content */,
+				AB61B4861CF824F300A16974 /* Tool */,
+				AB314E0E1CF81F7F00DD55B5 /* Main */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		AB314E0E1CF81F7F00DD55B5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AB314E0F1CF81F7F00DD55B5 /* Controller */,
+				AB314E101CF81F7F00DD55B5 /* Model */,
+				AB314E111CF81F7F00DD55B5 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AB314E0F1CF81F7F00DD55B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB314E121CF81F9900DD55B5 /* WKMainViewController.h */,
+				AB314E131CF81F9900DD55B5 /* WKMainViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB314E101CF81F7F00DD55B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB314E151CF81FC100DD55B5 /* WKMovieData.h */,
+				AB314E161CF81FC100DD55B5 /* WKMovieData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB314E111CF81F7F00DD55B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB8519061CF996C1004ACA6E /* WKMovieCell.h */,
+				AB8519071CF996C1004ACA6E /* WKMovieCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB61B4861CF824F300A16974 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				AB61B4871CF8250B00A16974 /* WKTool.h */,
+				AB61B4881CF8250B00A16974 /* WKTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		AB85190A1CF9ACD5004ACA6E /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB85190B1CF9ACD5004ACA6E /* Controller */,
+				AB85190C1CF9ACD5004ACA6E /* Model */,
+				AB85190D1CF9ACD5004ACA6E /* View */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		AB85190B1CF9ACD5004ACA6E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB85190E1CF9ACFD004ACA6E /* WKWebViewController.h */,
+				AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB85190C1CF9ACD5004ACA6E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB85190D1CF9ACD5004ACA6E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB6ACA4C7213AD63DE8AA936 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F488957B5ACDF44AA946158B /* Pods-我看电影.debug.xcconfig */,
+				B1E5F4853683583FA6F30134 /* Pods-我看电影.release.xcconfig */,
+				E86FC029A3AAE016E1B3859C /* Pods-我看电影Tests.debug.xcconfig */,
+				2E058A3F53B72843CD8B7E0F /* Pods-我看电影Tests.release.xcconfig */,
+				7255DC247617911B8CE735AF /* Pods-我看电影UITests.debug.xcconfig */,
+				DC21BE97E70E268E7369DE08 /* Pods-我看电影UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB314E041CF81EE900DD55B5 /* Build configuration list for PBXNativeTarget "我看电影" */;
 			buildPhases = (
+				0090FDF04E51A3F5786F5DFD /* Check Pods Manifest.lock */,
 				AB314DD31CF81EE900DD55B5 /* Sources */,
 				AB314DD41CF81EE900DD55B5 /* Frameworks */,
 				AB314DD51CF81EE900DD55B5 /* Resources */,
+				C88E38FDE915A205E754A9BF /* Embed Pods Frameworks */,
+				1699DC30CBCFAFEC142F7FC0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB314E071CF81EE900DD55B5 /* Build configuration list for PBXNativeTarget "我看电影Tests" */;
 			buildPhases = (
+				15567A8BEB211DD3C25360AE /* Check Pods Manifest.lock */,
 				AB314DEC1CF81EE900DD55B5 /* Sources */,
 				AB314DED1CF81EE900DD55B5 /* Frameworks */,
 				AB314DEE1CF81EE900DD55B5 /* Resources */,
+				8561F5043F6DD8B49D010594 /* Embed Pods Frameworks */,
+				0F308B5B117B251E32EFBD55 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +325,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB314E0A1CF81EE900DD55B5 /* Build configuration list for PBXNativeTarget "我看电影UITests" */;
 			buildPhases = (
+				15F52CB1636162036E14C060 /* Check Pods Manifest.lock */,
 				AB314DF71CF81EE900DD55B5 /* Sources */,
 				AB314DF81CF81EE900DD55B5 /* Frameworks */,
 				AB314DF91CF81EE900DD55B5 /* Resources */,
+				82F1CDF73B95FDC47A8F8432 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,7 +390,6 @@
 			files = (
 				AB314DEA1CF81EE900DD55B5 /* LaunchScreen.storyboard in Resources */,
 				AB314DE71CF81EE900DD55B5 /* Assets.xcassets in Resources */,
-				AB314DE51CF81EE900DD55B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,12 +409,139 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0090FDF04E51A3F5786F5DFD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0F308B5B117B251E32EFBD55 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-我看电影Tests/Pods-我看电影Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		15567A8BEB211DD3C25360AE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		15F52CB1636162036E14C060 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1699DC30CBCFAFEC142F7FC0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-我看电影/Pods-我看电影-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82F1CDF73B95FDC47A8F8432 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-我看电影UITests/Pods-我看电影UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8561F5043F6DD8B49D010594 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-我看电影Tests/Pods-我看电影Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C88E38FDE915A205E754A9BF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-我看电影/Pods-我看电影-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB314DD31CF81EE900DD55B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB314DE21CF81EE900DD55B5 /* ViewController.m in Sources */,
+				AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */,
+				AB314E171CF81FC100DD55B5 /* WKMovieData.m in Sources */,
+				AB61B4891CF8250B00A16974 /* WKTool.m in Sources */,
+				AB8519101CF9ACFD004ACA6E /* WKWebViewController.m in Sources */,
+				AB314E141CF81F9900DD55B5 /* WKMainViewController.m in Sources */,
 				AB314DDF1CF81EE900DD55B5 /* AppDelegate.m in Sources */,
 				AB314DDC1CF81EE900DD55B5 /* main.m in Sources */,
 			);
@@ -308,14 +579,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AB314DE31CF81EE900DD55B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB314DE41CF81EE900DD55B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AB314DE81CF81EE900DD55B5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -411,9 +674,11 @@
 		};
 		AB314E051CF81EE900DD55B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F488957B5ACDF44AA946158B /* Pods-我看电影.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "我看电影/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wk.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,9 +687,11 @@
 		};
 		AB314E061CF81EE900DD55B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1E5F4853683583FA6F30134 /* Pods-我看电影.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "我看电影/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "wk.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -433,6 +700,7 @@
 		};
 		AB314E081CF81EE900DD55B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E86FC029A3AAE016E1B3859C /* Pods-我看电影Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "我看电影Tests/Info.plist";
@@ -445,6 +713,7 @@
 		};
 		AB314E091CF81EE900DD55B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E058A3F53B72843CD8B7E0F /* Pods-我看电影Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "我看电影Tests/Info.plist";
@@ -457,6 +726,7 @@
 		};
 		AB314E0B1CF81EE900DD55B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7255DC247617911B8CE735AF /* Pods-我看电影UITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "我看电影UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -468,6 +738,7 @@
 		};
 		AB314E0C1CF81EE900DD55B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC21BE97E70E268E7369DE08 /* Pods-我看电影UITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "我看电影UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -496,6 +767,7 @@
 				AB314E061CF81EE900DD55B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB314E071CF81EE900DD55B5 /* Build configuration list for PBXNativeTarget "我看电影Tests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +776,7 @@
 				AB314E091CF81EE900DD55B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB314E0A1CF81EE900DD55B5 /* Build configuration list for PBXNativeTarget "我看电影UITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +785,7 @@
 				AB314E0C1CF81EE900DD55B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
