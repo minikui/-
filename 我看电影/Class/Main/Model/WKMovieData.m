@@ -8,6 +8,44 @@
 
 #import "WKMovieData.h"
 
+#pragma mark -- 电影分类
+@implementation WKMovieCategories
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return @{@"cateID"          : @"id",
+             @"postCountCate"   : @"post_count",
+             @"cateTitle"       : @"title",
+             };
+}
+
+- (void)setNilValueForKey:(NSString *)key {
+    [self setValue:@0 forKey:key];
+}
+
+
+@end
+
+#pragma mark -- 电影标签
+
+@implementation WKMovieTags
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return @{@"tagID"           : @"id",
+             @"postCountTag"    : @"tags",
+             @"tagTitle"        : @"title",
+             };
+}
+
+- (void)setNilValueForKey:(NSString *)key {
+    [self setValue:@0 forKey:key];
+}
+
+
+@end
+
+#pragma mark -- 电影缩略图大图地址
 @implementation WKMovieThumbnailLargeImages
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -26,6 +64,7 @@
 
 @end
 
+#pragma mark -- 电影缩略图字典
 @implementation WKMovieThumbnailImages
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -48,6 +87,7 @@
 
 @end
 
+#pragma mark -- 暂时无用
 @implementation WKMovieAttachments
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -55,7 +95,7 @@
     return @{@"mimeType"    : @"mime_type",
              @"imageURL"    : @"url",
              @"ID"          : @"id",
-             @"desc" : @"description",
+             @"desc"        : @"description",
              };
 }
 
@@ -69,6 +109,7 @@
 
 @end
 
+#pragma mark -- 电影整站数据
 @implementation WKMovieData
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -100,6 +141,7 @@
 
 @end
 
+#pragma mark -- 电影创建作者
 @implementation WKMoviePostAuthor
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -111,6 +153,7 @@
 
 @end
 
+#pragma mark -- 电影详情
 @implementation WKMoviePostsData
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
@@ -118,10 +161,11 @@
     return @{@"postTitle"       : @"title",
              @"postURL"         : @"url",
              @"postExcerpt"     : @"excerpt",
+             @"postContent"     : @"content",
              @"postDate"        : @"date",
              @"postModified"    : @"modified",
-//             @"postCategories"  : @"categories",
-//             @"postTags"        : @"tags",
+             @"postCategories"  : @"categories",
+             @"postTags"        : @"tags",
              @"attachments"     : @"attachments",
              @"postAuthor"      : @"author",
              @"thumbnailImages" : @"thumbnail_images",
@@ -149,6 +193,34 @@
     return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         WKMovieThumbnailImages *thumbnailImages = [MTLJSONAdapter modelOfClass:[WKMovieThumbnailImages class] fromJSONDictionary:value error:nil];
         return thumbnailImages;
+    }];
+}
+
++ (NSValueTransformer *)postCategoriesJSONTransformer
+{
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        NSArray *jsonArray = value;
+        NSMutableArray *cateArray = [NSMutableArray array];
+        
+        [jsonArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            WKMovieCategories *moveCategory = [MTLJSONAdapter modelOfClass:[WKMovieCategories class] fromJSONDictionary:obj error:nil];
+            [cateArray addObject:moveCategory];
+        }];
+        return cateArray;
+    }];
+}
+
++ (NSValueTransformer *)postTagsJSONTransformer
+{
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        NSArray *jsonArray = value;
+        NSMutableArray *tagArray = [NSMutableArray array];
+        
+        [jsonArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            WKMovieTags *moveTag = [MTLJSONAdapter modelOfClass:[WKMovieTags class] fromJSONDictionary:obj error:nil];
+            [tagArray addObject:moveTag];
+        }];
+        return tagArray;
     }];
 }
 

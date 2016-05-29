@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WKMainViewController.h"
+#import "WKNaviController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     WKMainViewController *wkVC = [[WKMainViewController alloc] initWithStyle:UITableViewStylePlain];
     
-    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:wkVC];
+    WKNaviController *masterNav = [[WKNaviController alloc] initWithRootViewController:wkVC];
     
     self.window.rootViewController = masterNav;
     

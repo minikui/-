@@ -10,6 +10,28 @@
 #import "Mantle.h"
 
 /**
+ *  电影分类
+ */
+@interface WKMovieCategories : MTLModel <MTLJSONSerializing>
+
+@property(nonatomic, assign) long cateID;
+@property(nonatomic, assign) long postCountCate;
+@property(nonatomic, copy) NSString *cateTitle;
+
+@end
+
+/**
+ *  电影标签
+ */
+@interface WKMovieTags : MTLModel <MTLJSONSerializing>
+
+@property(nonatomic, assign) long tagID;
+@property(nonatomic, assign) long postCountTag;
+@property(nonatomic, copy) NSString *tagTitle;
+
+@end
+
+/**
  *  电影缩略图包含的大图
  */
 @interface WKMovieThumbnailLargeImages : MTLModel <MTLJSONSerializing>
@@ -54,10 +76,11 @@
 @property(nonatomic, copy) NSString *postTitle;
 @property(nonatomic, strong) NSURL *postURL;
 @property(nonatomic, copy) NSString *postExcerpt;
+@property(nonatomic, copy) NSString *postContent;
 @property(nonatomic, copy) NSString *postDate;
 @property(nonatomic, copy) NSString *postModified;
-//@property(nonatomic, strong) NSArray *postCategories;
-//@property(nonatomic, strong) NSArray *postTags;
+@property(nonatomic, strong) NSArray *postCategories;
+@property(nonatomic, strong) NSArray *postTags;
 @property(nonatomic, strong) NSArray *attachments;
 @property(nonatomic, strong) WKMoviePostAuthor *postAuthor;
 @property(nonatomic, strong) WKMovieThumbnailImages *thumbnailImages;

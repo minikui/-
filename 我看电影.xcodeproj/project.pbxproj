@@ -19,6 +19,11 @@
 		AB61B4891CF8250B00A16974 /* WKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AB61B4881CF8250B00A16974 /* WKTool.m */; };
 		AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8519071CF996C1004ACA6E /* WKMovieCell.m */; };
 		AB8519101CF9ACFD004ACA6E /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */; };
+		ABEFCA3D1CFA05C600ADD338 /* WKNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFCA3C1CFA05C600ADD338 /* WKNaviController.m */; };
+		ABEFCA411CFABF0900ADD338 /* WKMovieDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFCA401CFABF0900ADD338 /* WKMovieDetailView.m */; };
+		ABEFCA441CFAC05500ADD338 /* WKMovieDataFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFCA431CFAC05500ADD338 /* WKMovieDataFrame.m */; };
+		ABEFCA471CFAC1DD00ADD338 /* WKMovieDetailContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFCA461CFAC1DD00ADD338 /* WKMovieDetailContentView.m */; };
+		ABEFCA491CFAC6DC00ADD338 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEFCA481CFAC6DC00ADD338 /* CoreGraphics.framework */; };
 		AC18787FF96B7D50F2A58F07 /* libPods-我看电影UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8739E4A5F5C0712C1D805C4F /* libPods-我看电影UITests.a */; };
 		E09E699BC23666B12F708A17 /* libPods-我看电影Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E19ECAE99DD4964FA683AF4 /* libPods-我看电影Tests.a */; };
 /* End PBXBuildFile section */
@@ -69,6 +74,16 @@
 		AB8519071CF996C1004ACA6E /* WKMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieCell.m; sourceTree = "<group>"; };
 		AB85190E1CF9ACFD004ACA6E /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
+		ABEFCA3B1CFA05C600ADD338 /* WKNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKNaviController.h; sourceTree = "<group>"; };
+		ABEFCA3C1CFA05C600ADD338 /* WKNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKNaviController.m; sourceTree = "<group>"; };
+		ABEFCA3E1CFA9D0300ADD338 /* WK_PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WK_PrefixHeader.pch; sourceTree = "<group>"; };
+		ABEFCA3F1CFABF0900ADD338 /* WKMovieDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieDetailView.h; sourceTree = "<group>"; };
+		ABEFCA401CFABF0900ADD338 /* WKMovieDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieDetailView.m; sourceTree = "<group>"; };
+		ABEFCA421CFAC05500ADD338 /* WKMovieDataFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieDataFrame.h; sourceTree = "<group>"; };
+		ABEFCA431CFAC05500ADD338 /* WKMovieDataFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieDataFrame.m; sourceTree = "<group>"; };
+		ABEFCA451CFAC1DD00ADD338 /* WKMovieDetailContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieDetailContentView.h; sourceTree = "<group>"; };
+		ABEFCA461CFAC1DD00ADD338 /* WKMovieDetailContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieDetailContentView.m; sourceTree = "<group>"; };
+		ABEFCA481CFAC6DC00ADD338 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B1E5F4853683583FA6F30134 /* Pods-我看电影.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影.release.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影/Pods-我看电影.release.xcconfig"; sourceTree = "<group>"; };
 		DC21BE97E70E268E7369DE08 /* Pods-我看电影UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影UITests/Pods-我看电影UITests.release.xcconfig"; sourceTree = "<group>"; };
 		E86FC029A3AAE016E1B3859C /* Pods-我看电影Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我看电影Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-我看电影Tests/Pods-我看电影Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEFCA491CFAC6DC00ADD338 /* CoreGraphics.framework in Frameworks */,
 				4762CF3409864902CDC823BF /* libPods-我看电影.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +122,7 @@
 		98AD7B3E674C5DBC7CE79101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABEFCA481CFAC6DC00ADD338 /* CoreGraphics.framework */,
 				A70D7B1F1F5B47713BE3DFC7 /* libPods-我看电影.a */,
 				6E19ECAE99DD4964FA683AF4 /* libPods-我看电影Tests.a */,
 				8739E4A5F5C0712C1D805C4F /* libPods-我看电影UITests.a */,
@@ -153,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				AB314DDB1CF81EE900DD55B5 /* main.m */,
+				ABEFCA3E1CFA9D0300ADD338 /* WK_PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -200,6 +218,8 @@
 			children = (
 				AB314E121CF81F9900DD55B5 /* WKMainViewController.h */,
 				AB314E131CF81F9900DD55B5 /* WKMainViewController.m */,
+				ABEFCA3B1CFA05C600ADD338 /* WKNaviController.h */,
+				ABEFCA3C1CFA05C600ADD338 /* WKNaviController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,6 +229,8 @@
 			children = (
 				AB314E151CF81FC100DD55B5 /* WKMovieData.h */,
 				AB314E161CF81FC100DD55B5 /* WKMovieData.m */,
+				ABEFCA421CFAC05500ADD338 /* WKMovieDataFrame.h */,
+				ABEFCA431CFAC05500ADD338 /* WKMovieDataFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +240,10 @@
 			children = (
 				AB8519061CF996C1004ACA6E /* WKMovieCell.h */,
 				AB8519071CF996C1004ACA6E /* WKMovieCell.m */,
+				ABEFCA3F1CFABF0900ADD338 /* WKMovieDetailView.h */,
+				ABEFCA401CFABF0900ADD338 /* WKMovieDetailView.m */,
+				ABEFCA451CFAC1DD00ADD338 /* WKMovieDetailContentView.h */,
+				ABEFCA461CFAC1DD00ADD338 /* WKMovieDetailContentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -538,12 +564,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */,
+				ABEFCA3D1CFA05C600ADD338 /* WKNaviController.m in Sources */,
 				AB314E171CF81FC100DD55B5 /* WKMovieData.m in Sources */,
 				AB61B4891CF8250B00A16974 /* WKTool.m in Sources */,
 				AB8519101CF9ACFD004ACA6E /* WKWebViewController.m in Sources */,
 				AB314E141CF81F9900DD55B5 /* WKMainViewController.m in Sources */,
+				ABEFCA441CFAC05500ADD338 /* WKMovieDataFrame.m in Sources */,
 				AB314DDF1CF81EE900DD55B5 /* AppDelegate.m in Sources */,
+				ABEFCA471CFAC1DD00ADD338 /* WKMovieDetailContentView.m in Sources */,
 				AB314DDC1CF81EE900DD55B5 /* main.m in Sources */,
+				ABEFCA411CFABF0900ADD338 /* WKMovieDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

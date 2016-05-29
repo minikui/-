@@ -12,6 +12,8 @@
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
 #import "WKWebViewController.h"
+#import "WKMovieDataFrame.h"
+#import "WKMovieCell.h"
 
 @interface WKMainViewController ()
 
@@ -38,7 +40,9 @@
 
 - (void)getAllData
 {
-    MBProgressHUD *hud =  [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    self.title = @"我看电影";
+
+    MBProgressHUD *hud =  [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     hud.labelText = @"正在努力加载...";
 
     NSString *strURL = @"http://128.199.114.93/dy/?json=1";
@@ -49,10 +53,20 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         WKMovieData *movieData = [MTLJSONAdapter modelOfClass:[WKMovieData class] fromJSONDictionary:responseObject error:nil];
 //        WKMoviePostsData *postData = [movieData.posts firstObject];
+//        WKMovieCategories *movieCate = [postData.postCategories firstObject];
+//        NSLog(@"%ld, %@", movieCate.cateID, movieCate.cateTitle);
 //        WKMovieThumbnailLargeImages *largeImages = postData.thumbnailImages.thumbnailLargeImages;
 //        NSLog(@"%@", largeImages.thumbnailLargeImagesURL);
 //        NSLog(@"%lu", (unsigned long)movieData.posts.count);
-        self.postArray = movieData.posts;
+
+        NSMutableArray *dataFrame = [NSMutableArray array];
+        for (WKMoviePostsData *moviePost in movieData.posts) {
+            WKMovieDataFrame *movieDataFrame = [[WKMovieDataFrame alloc] init];
+            movieDataFrame.moviePostData = moviePost;
+            [dataFrame addObject:movieDataFrame];
+        }
+        
+        self.postArray = dataFrame;
         hud.labelText = @"加载成功！";
         [self.tableView reloadData];
 //        NSLog(@"%@", responseObject);
@@ -81,17 +95,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-    if (!cell) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    }
-    WKMoviePostsData *postData = self.postArray[indexPath.row];
-    cell.textLabel.text = postData.postTitle;
-    cell.detailTextLabel.text = postData.postAuthor.authorName;
-
-    WKMovieThumbnailLargeImages *thumbnailLargeImages = postData.thumbnailImages.thumbnailLargeImages;
+    WKMovieCell *cell = [WKMovieCell cellWithTableView:tableView];
     
-    [cell.imageView sd_setImageWithURL:thumbnailLargeImages.thumbnailLargeImagesURL placeholderImage:[UIImage imageNamed:@"placeHolder"]];
+    WKMovieDataFrame *postDataFrame = self.postArray[indexPath.row];
+
+    cell.movieDataFrame = postDataFrame;
+    
     // Configure the cell...
     
     return cell;
@@ -99,15 +108,19 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150.0;
+    WKMovieDataFrame *moveFrame = self.postArray[indexPath.row];
+    return moveFrame.cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WKWebViewController *webViewController = [[WKWebViewController alloc] init];
-    WKMoviePostsData *postData = self.postArray[indexPath.row];
-    webViewController.contentURL = postData.postURL;
-    webViewController.topTitle = postData.postTitle;
+    WKMovieDataFrame *postDataFrame = self.postArray[indexPath.row];
+    webViewController.contentURL = postDataFrame.moviePostData.postURL;
+    webViewController.topTitle = postDataFrame.moviePostData.postTitle;
+    //导航栏后退按钮
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = back;
     [self.navigationController pushViewController:webViewController animated:YES];
 
 }
