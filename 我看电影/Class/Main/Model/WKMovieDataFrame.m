@@ -7,6 +7,7 @@
 //
 
 #import "WKMovieDataFrame.h"
+#import "NSString+WK.h"
 
 @implementation WKMovieDataFrame
 
@@ -20,7 +21,7 @@
     CGFloat imageViewX = WKMoviePostsDateBorder;
     CGFloat imageViewY = imageViewX;
     CGFloat imageViewWidth = WKMoviePostImageWidth * 4;
-    CGFloat imageViewHeight = imageViewWidth * 1.5;
+    CGFloat imageViewHeight = imageViewWidth * WKMoviePostImageScale;
     _imageViewFrame = CGRectMake(imageViewX, imageViewY, imageViewWidth, imageViewHeight);
     //标题
     CGFloat titleLabelX = CGRectGetMaxX(_imageViewFrame) + 2 * WKMoviePostsDateBorder;
@@ -52,6 +53,7 @@
     CGFloat contentLabelX = authorLabelX;
     CGFloat contentLabelY = CGRectGetMaxY(_authorLabelFrame) + WKMoviePostsDateBorder;
 
+    //UILabel展示html内容
     NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[moviePostData.postExcerpt dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSFontAttributeName : WKMovieContentFont} documentAttributes:nil error:nil];
     
     CGSize contentSize = CGSizeMake(cellWidth * 0.7, imageViewHeight * 0.5);
@@ -63,22 +65,8 @@
     CGFloat cateLabelY = CGRectGetMaxY(_contentLabelFrame) + 2 * WKMoviePostsDateBorder;
     
     NSArray *postCate = moviePostData.postCategories;
-    NSMutableString *cateName = [NSMutableString string];
-    WKMovieCategories *movieCate = [[WKMovieCategories alloc] init];
-    if (postCate.count - 1) {
-        movieCate = [postCate firstObject];
-        cateName = [movieCate.cateTitle mutableCopy];
-        
-        for (int index = 0; index < postCate.count - 1; index++) {
-            movieCate = postCate[index+1];
-            [cateName appendString:[NSString stringWithFormat:@"*%@", movieCate.cateTitle]];
-        }
-    } else if (postCate.count == 1) {
-        movieCate = [postCate firstObject];
-        cateName = [movieCate.cateTitle mutableCopy];
-    } else {
-        cateName = [@"" mutableCopy];
-    }
+    NSString *cateName = [NSString stringWithCateArray:postCate];
+
     NSDictionary *cateAttr = @{NSFontAttributeName : WKMovieTagFont};
     CGSize cateSize = [cateName sizeWithAttributes:cateAttr];
     _cateLabelFrame = (CGRect){{cateLabelX, cateLabelY}, cateSize};
@@ -86,24 +74,9 @@
     //标签
     CGFloat tagLabelX = CGRectGetMaxX(_cateLabelFrame) + WKMoviePostsDateBorder;
     CGFloat tagLabelY = cateLabelY;
-//    NSArray *postTag = moviePostData.postTags;
-//    WKMovieTags *movieTag = [[WKMovieTags alloc] init];
-//    NSMutableString *tagName = [NSMutableString string];
-//    
-//    if (postTag.count - 1) {
-//        movieTag = [postTag firstObject];
-//        tagName = [movieTag.tagTitle mutableCopy];
-//        
-//        for (int index = 0; index < postCate.count - 1; index++) {
-//            [tagName appendString:[NSString stringWithFormat:@".%@", postTag[index+1]]];
-//        }
-//    } else if (postTag.count == 1) {
-//        movieTag = [postTag firstObject];
-//        tagName = [movieTag.tagTitle mutableCopy];
-//    } else {
-//        tagName = [@"" mutableCopy];
-//    }
-    NSString *tagName = @"标签";
+    NSArray *postTag = moviePostData.postTags;
+    NSString *tagName = [NSString stringWithTagArray:postTag];
+
     NSDictionary *tagAttr = @{NSFontAttributeName : WKMovieTagFont};
     CGSize tagSize = [tagName sizeWithAttributes:tagAttr];
     _tagLabelFrame = (CGRect){{tagLabelX, tagLabelY}, tagSize};

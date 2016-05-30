@@ -7,6 +7,7 @@
 //
 
 #import "WKMovieDetailContentView.h"
+#import "NSString+WK.h"
 
 @interface WKMovieDetailContentView ()
 
@@ -36,21 +37,21 @@
     //标题
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.font = WKMovieTitleFont;
-    titleLabel.textColor = [UIColor orangeColor];
+    titleLabel.textColor = WKMovieTitleColor;
     self.titleLabel = titleLabel;
     [self addSubview:titleLabel];
     
     //作者
     UILabel *authorLabel = [[UILabel alloc] init];
     authorLabel.font = WKMovieAuthorFont;
-    authorLabel.textColor = [UIColor grayColor];
+    authorLabel.textColor = WKMovieAuthorColor;
     self.authorLabel = authorLabel;
     [self addSubview:authorLabel];
 
     //修改时间
     UILabel *dateLabel = [[UILabel alloc] init];
     dateLabel.font = WKMovieAuthorFont;
-    dateLabel.textColor = [UIColor lightGrayColor];
+    dateLabel.textColor = WKMovieAuthorColor;
     self.dateLabel = dateLabel;
     [self addSubview:dateLabel];
 
@@ -58,23 +59,23 @@
     UILabel *contentLabel = [[UILabel alloc] init];
     contentLabel.numberOfLines = 0;
     contentLabel.font = WKMovieContentFont;
-    contentLabel.textColor = [UIColor blackColor];
+    contentLabel.textColor = WKMovieContentColor;
     self.contentLabel = contentLabel;
     [self addSubview:contentLabel];
 
     //分类
     UILabel *cateLabel = [[UILabel alloc] init];
     cateLabel.font = WKMovieTagFont;
-    cateLabel.backgroundColor = [UIColor grayColor];
-    cateLabel.textColor = [UIColor whiteColor];
+//    cateLabel.backgroundColor = [UIColor grayColor];
+    cateLabel.textColor = WKMovieCateTagColor;
     self.cateLabel = cateLabel;
     [self addSubview:cateLabel];
 
     //标签
     UILabel *tagLabel = [[UILabel alloc] init];
     tagLabel.font = WKMovieTagFont;
-    tagLabel.backgroundColor = [UIColor grayColor];
-    tagLabel.textColor = [UIColor whiteColor];
+//    tagLabel.backgroundColor = [UIColor grayColor];
+    tagLabel.textColor = WKMovieCateTagColor;
     self.tagLabel = tagLabel;
     [self addSubview:tagLabel];
 
@@ -84,55 +85,31 @@
 {
     _movieDataFrame = movieDataFrame;
     
+#pragma mark -- 设置数据
+    //标题
     self.titleLabel.text = movieDataFrame.moviePostData.postTitle;
+    //作者
     NSString *authorName = [NSString stringWithFormat:@"作者:%@", movieDataFrame.moviePostData.postAuthor.authorName];
     self.authorLabel.text = authorName;
+    //修改时间
     NSString *modifiedTime = [NSString stringWithFormat:@"修改时间:%@", movieDataFrame.moviePostData.postModified];
     self.dateLabel.text = modifiedTime;
 
+    //内容简介
     NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[movieDataFrame.moviePostData.postExcerpt dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSFontAttributeName : WKMovieContentFont} documentAttributes:nil error:nil];
     self.contentLabel.attributedText = attrStr;
 
+    //分类
     NSArray *postCate = movieDataFrame.moviePostData.postCategories;
-    NSMutableString *cateName = [NSMutableString string];
-    WKMovieCategories *movieCate = [[WKMovieCategories alloc] init];
-    if (postCate.count - 1) {
-        movieCate = [postCate firstObject];
-        cateName = [movieCate.cateTitle mutableCopy];
-        
-        for (int index = 0; index < postCate.count - 1; index++) {
-            movieCate = postCate[index+1];
-            [cateName appendString:[NSString stringWithFormat:@"*%@", movieCate.cateTitle]];
-        }
-    } else if (postCate.count == 1) {
-        movieCate = [postCate firstObject];
-        cateName = [movieCate.cateTitle mutableCopy];
-    } else {
-        cateName = [@"" mutableCopy];
-    }
+    NSString *cateName = [NSString stringWithCateArray:postCate];
     self.cateLabel.text = cateName;
 
-//    NSArray *postTag = movieDataFrame.moviePostData.postTags;
-//    WKMovieTags *movieTag = [[WKMovieTags alloc] init];
-//    NSMutableString *tagName = [NSMutableString string];
-//
-//    if (postTag.count - 1) {
-//        movieTag = [postTag firstObject];
-//        tagName = [movieTag.tagTitle mutableCopy];
-//        
-//        for (int index = 0; index < postCate.count - 1; index++) {
-//            [tagName appendString:[NSString stringWithFormat:@".%@", postTag[index+1]]];
-//        }
-//    } else if (postTag.count == 1) {
-//        movieTag = [postTag firstObject];
-//        tagName = [movieTag.tagTitle mutableCopy];
-//    } else {
-//        tagName = [@"" mutableCopy];
-//    }
-    
-    NSString *tagName = @"标签";
+    //标签
+    NSArray *postTag = movieDataFrame.moviePostData.postTags;
+    NSString *tagName = [NSString stringWithTagArray:postTag];
     self.tagLabel.text = tagName;
 
+#pragma mark -- 设置frame
     self.titleLabel.frame = movieDataFrame.titleLabelFrame;
     self.authorLabel.frame = movieDataFrame.authorLabelFrame;
     self.dateLabel.frame = movieDataFrame.dateLabelFrame;

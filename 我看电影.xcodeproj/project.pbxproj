@@ -16,6 +16,7 @@
 		AB314E001CF81EE900DD55B5 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314DFF1CF81EE900DD55B5 /* ____UITests.m */; };
 		AB314E141CF81F9900DD55B5 /* WKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314E131CF81F9900DD55B5 /* WKMainViewController.m */; };
 		AB314E171CF81FC100DD55B5 /* WKMovieData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314E161CF81FC100DD55B5 /* WKMovieData.m */; };
+		AB4B740D1CFC1B81000D082F /* NSString+WK.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4B740C1CFC1B81000D082F /* NSString+WK.m */; };
 		AB61B4891CF8250B00A16974 /* WKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AB61B4881CF8250B00A16974 /* WKTool.m */; };
 		AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8519071CF996C1004ACA6E /* WKMovieCell.m */; };
 		AB8519101CF9ACFD004ACA6E /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */; };
@@ -68,6 +69,8 @@
 		AB314E131CF81F9900DD55B5 /* WKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMainViewController.m; sourceTree = "<group>"; };
 		AB314E151CF81FC100DD55B5 /* WKMovieData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieData.h; sourceTree = "<group>"; };
 		AB314E161CF81FC100DD55B5 /* WKMovieData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieData.m; sourceTree = "<group>"; };
+		AB4B740B1CFC1B81000D082F /* NSString+WK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WK.h"; sourceTree = "<group>"; };
+		AB4B740C1CFC1B81000D082F /* NSString+WK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WK.m"; sourceTree = "<group>"; };
 		AB61B4871CF8250B00A16974 /* WKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTool.h; sourceTree = "<group>"; };
 		AB61B4881CF8250B00A16974 /* WKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTool.m; sourceTree = "<group>"; };
 		AB8519061CF996C1004ACA6E /* WKMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieCell.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 			children = (
 				AB61B4871CF8250B00A16974 /* WKTool.h */,
 				AB61B4881CF8250B00A16974 /* WKTool.m */,
+				AB4B740B1CFC1B81000D082F /* NSString+WK.h */,
+				AB4B740C1CFC1B81000D082F /* NSString+WK.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -564,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */,
+				AB4B740D1CFC1B81000D082F /* NSString+WK.m in Sources */,
 				ABEFCA3D1CFA05C600ADD338 /* WKNaviController.m in Sources */,
 				AB314E171CF81FC100DD55B5 /* WKMovieData.m in Sources */,
 				AB61B4891CF8250B00A16974 /* WKTool.m in Sources */,

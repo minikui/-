@@ -16,6 +16,11 @@
 #define WKMovieContentFont [UIFont systemFontOfSize:17.0]
 #define WKMovieTagFont [UIFont systemFontOfSize:12.0]
 
+#define WKMovieCateTagColor [UIColor colorWithRed:45/255.0 green:125/255.0 blue:177/255.0 alpha:1.0]
+#define WKMovieTitleColor [UIColor colorWithRed:205/255.0 green:117/255.0 blue:100/255.0 alpha:1.0]
+#define WKMovieAuthorColor [UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:1.0]
+#define WKMovieContentColor [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0]
+
 #import <Foundation/Foundation.h>
 #import "WKMovieData.h"
 #import <UIKit/UIKit.h>
