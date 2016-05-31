@@ -13,4 +13,6 @@
 + (NSString *)stringWithCateArray:(NSArray *)cateArray;
 + (NSString *)stringWithTagArray:(NSArray *)tagArray;
 
+- (NSString *)stringCutWithMark:(NSString *)markStr;
+
 @end

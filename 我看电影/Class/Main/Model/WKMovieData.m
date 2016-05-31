@@ -87,7 +87,7 @@
 
 @end
 
-#pragma mark -- 暂时无用
+#pragma mark -- 缩略图以及大图
 @implementation WKMovieAttachments
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey

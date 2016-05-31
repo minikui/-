@@ -17,9 +17,14 @@
 		AB314E141CF81F9900DD55B5 /* WKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314E131CF81F9900DD55B5 /* WKMainViewController.m */; };
 		AB314E171CF81FC100DD55B5 /* WKMovieData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB314E161CF81FC100DD55B5 /* WKMovieData.m */; };
 		AB4B740D1CFC1B81000D082F /* NSString+WK.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4B740C1CFC1B81000D082F /* NSString+WK.m */; };
+		AB4B74101CFC4818000D082F /* WKContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4B740F1CFC4818000D082F /* WKContentController.m */; };
+		AB4B74161CFC4A0D000D082F /* WKTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4B74151CFC4A0D000D082F /* WKTopView.m */; };
+		AB4B74191CFC4A1A000D082F /* WKBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4B74181CFC4A1A000D082F /* WKBottomView.m */; };
+		AB4B741C1CFC8A03000D082F /* WKMovieDetailContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4B741B1CFC8A03000D082F /* WKMovieDetailContentFrame.m */; };
 		AB61B4891CF8250B00A16974 /* WKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AB61B4881CF8250B00A16974 /* WKTool.m */; };
 		AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8519071CF996C1004ACA6E /* WKMovieCell.m */; };
 		AB8519101CF9ACFD004ACA6E /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */; };
+		ABC0AD651CFD375200C55166 /* WKContView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC0AD641CFD375200C55166 /* WKContView.m */; };
 		ABEFCA3D1CFA05C600ADD338 /* WKNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFCA3C1CFA05C600ADD338 /* WKNaviController.m */; };
 		ABEFCA411CFABF0900ADD338 /* WKMovieDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFCA401CFABF0900ADD338 /* WKMovieDetailView.m */; };
 		ABEFCA441CFAC05500ADD338 /* WKMovieDataFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEFCA431CFAC05500ADD338 /* WKMovieDataFrame.m */; };
@@ -71,12 +76,22 @@
 		AB314E161CF81FC100DD55B5 /* WKMovieData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieData.m; sourceTree = "<group>"; };
 		AB4B740B1CFC1B81000D082F /* NSString+WK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WK.h"; sourceTree = "<group>"; };
 		AB4B740C1CFC1B81000D082F /* NSString+WK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WK.m"; sourceTree = "<group>"; };
+		AB4B740E1CFC4818000D082F /* WKContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKContentController.h; sourceTree = "<group>"; };
+		AB4B740F1CFC4818000D082F /* WKContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKContentController.m; sourceTree = "<group>"; };
+		AB4B74141CFC4A0D000D082F /* WKTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTopView.h; sourceTree = "<group>"; };
+		AB4B74151CFC4A0D000D082F /* WKTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTopView.m; sourceTree = "<group>"; };
+		AB4B74171CFC4A1A000D082F /* WKBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKBottomView.h; sourceTree = "<group>"; };
+		AB4B74181CFC4A1A000D082F /* WKBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKBottomView.m; sourceTree = "<group>"; };
+		AB4B741A1CFC8A03000D082F /* WKMovieDetailContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieDetailContentFrame.h; sourceTree = "<group>"; };
+		AB4B741B1CFC8A03000D082F /* WKMovieDetailContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieDetailContentFrame.m; sourceTree = "<group>"; };
 		AB61B4871CF8250B00A16974 /* WKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKTool.h; sourceTree = "<group>"; };
 		AB61B4881CF8250B00A16974 /* WKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKTool.m; sourceTree = "<group>"; };
 		AB8519061CF996C1004ACA6E /* WKMovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKMovieCell.h; sourceTree = "<group>"; };
 		AB8519071CF996C1004ACA6E /* WKMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKMovieCell.m; sourceTree = "<group>"; };
 		AB85190E1CF9ACFD004ACA6E /* WKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
+		ABC0AD631CFD375200C55166 /* WKContView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKContView.h; sourceTree = "<group>"; };
+		ABC0AD641CFD375200C55166 /* WKContView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKContView.m; sourceTree = "<group>"; };
 		ABEFCA3B1CFA05C600ADD338 /* WKNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKNaviController.h; sourceTree = "<group>"; };
 		ABEFCA3C1CFA05C600ADD338 /* WKNaviController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKNaviController.m; sourceTree = "<group>"; };
 		ABEFCA3E1CFA9D0300ADD338 /* WK_PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WK_PrefixHeader.pch; sourceTree = "<group>"; };
@@ -277,6 +292,8 @@
 			children = (
 				AB85190E1CF9ACFD004ACA6E /* WKWebViewController.h */,
 				AB85190F1CF9ACFD004ACA6E /* WKWebViewController.m */,
+				AB4B740E1CFC4818000D082F /* WKContentController.h */,
+				AB4B740F1CFC4818000D082F /* WKContentController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +301,8 @@
 		AB85190C1CF9ACD5004ACA6E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB4B741A1CFC8A03000D082F /* WKMovieDetailContentFrame.h */,
+				AB4B741B1CFC8A03000D082F /* WKMovieDetailContentFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +310,12 @@
 		AB85190D1CF9ACD5004ACA6E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABC0AD631CFD375200C55166 /* WKContView.h */,
+				ABC0AD641CFD375200C55166 /* WKContView.m */,
+				AB4B74141CFC4A0D000D082F /* WKTopView.h */,
+				AB4B74151CFC4A0D000D082F /* WKTopView.m */,
+				AB4B74171CFC4A1A000D082F /* WKBottomView.h */,
+				AB4B74181CFC4A1A000D082F /* WKBottomView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -568,6 +593,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB4B74161CFC4A0D000D082F /* WKTopView.m in Sources */,
+				AB4B74101CFC4818000D082F /* WKContentController.m in Sources */,
 				AB8519081CF996C1004ACA6E /* WKMovieCell.m in Sources */,
 				AB4B740D1CFC1B81000D082F /* NSString+WK.m in Sources */,
 				ABEFCA3D1CFA05C600ADD338 /* WKNaviController.m in Sources */,
@@ -575,10 +602,13 @@
 				AB61B4891CF8250B00A16974 /* WKTool.m in Sources */,
 				AB8519101CF9ACFD004ACA6E /* WKWebViewController.m in Sources */,
 				AB314E141CF81F9900DD55B5 /* WKMainViewController.m in Sources */,
+				AB4B741C1CFC8A03000D082F /* WKMovieDetailContentFrame.m in Sources */,
 				ABEFCA441CFAC05500ADD338 /* WKMovieDataFrame.m in Sources */,
 				AB314DDF1CF81EE900DD55B5 /* AppDelegate.m in Sources */,
+				AB4B74191CFC4A1A000D082F /* WKBottomView.m in Sources */,
 				ABEFCA471CFAC1DD00ADD338 /* WKMovieDetailContentView.m in Sources */,
 				AB314DDC1CF81EE900DD55B5 /* main.m in Sources */,
+				ABC0AD651CFD375200C55166 /* WKContView.m in Sources */,
 				ABEFCA411CFABF0900ADD338 /* WKMovieDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,10 +14,14 @@
 #import "WKWebViewController.h"
 #import "WKMovieDataFrame.h"
 #import "WKMovieCell.h"
+#import "WKContentController.h"
+#import "WKMovieDetailContentFrame.h"
+#import "WKContView.h"
 
 @interface WKMainViewController ()
 
 @property(nonatomic, strong) NSArray *postArray;
+@property(nonatomic, strong) NSArray *postDetailArray;
 
 @end
 
@@ -29,6 +33,14 @@
         _postArray = [NSArray array];
     }
     return _postArray;
+}
+
+- (NSArray *)postDetailArray
+{
+    if (!_postDetailArray) {
+        _postDetailArray = [NSArray array];
+    }
+    return _postDetailArray;
 }
 
 - (void)viewDidLoad {
@@ -60,13 +72,18 @@
 //        NSLog(@"%lu", (unsigned long)movieData.posts.count);
 
         NSMutableArray *dataFrame = [NSMutableArray array];
+        NSMutableArray *dataDetailFrame = [NSMutableArray array];
         for (WKMoviePostsData *moviePost in movieData.posts) {
             WKMovieDataFrame *movieDataFrame = [[WKMovieDataFrame alloc] init];
             movieDataFrame.moviePostData = moviePost;
             [dataFrame addObject:movieDataFrame];
+            WKMovieDetailContentFrame *movieDetailFrame = [[WKMovieDetailContentFrame alloc] init];
+            movieDetailFrame.moviePostData = moviePost;
+            [dataDetailFrame addObject:movieDetailFrame];
         }
         
         self.postArray = dataFrame;
+        self.postDetailArray = dataDetailFrame;
         hud.labelText = @"加载成功！";
         [self.tableView reloadData];
 //        NSLog(@"%@", responseObject);
@@ -114,14 +131,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    WKWebViewController *webViewController = [[WKWebViewController alloc] init];
-    WKMovieDataFrame *postDataFrame = self.postArray[indexPath.row];
-    webViewController.contentURL = postDataFrame.moviePostData.postURL;
-    webViewController.topTitle = postDataFrame.moviePostData.postTitle;
+    WKContentController *contentController = [[WKContentController alloc] init];
+    WKMovieDetailContentFrame *postDetailFrame = self.postDetailArray[indexPath.row];
+    WKContView *contView = (WKContView *)contentController.view;
+    contView.movieDetailFrame = postDetailFrame;
+//    contentController.view.backgroundColor = [UIColor redColor];
+    contentController.topTitle = postDetailFrame.moviePostData.postTitle;
+//    NSLog(@"%@", [contentController.view class]);
     //导航栏后退按钮
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.navigationItem.backBarButtonItem = back;
-    [self.navigationController pushViewController:webViewController animated:YES];
+    [self.navigationController pushViewController:contentController animated:YES];
 
 }
 

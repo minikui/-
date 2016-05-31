@@ -18,7 +18,7 @@
     strName = [movieCate.cateTitle mutableCopy];
     for (int index = 1; index < cateArray.count; index++) {
         movieCate = cateArray[index];
-        [strName appendString:[NSString stringWithFormat:@" %@", movieCate.cateTitle]];
+        [strName appendString:[NSString stringWithFormat:@" / %@", movieCate.cateTitle]];
     }
     return [NSString stringWithFormat:@"分类：%@",strName];
 }
@@ -39,5 +39,13 @@
     return [NSString stringWithFormat:@"Tags：%@",strName];
     
 }
+
+- (NSString *)stringCutWithMark:(NSString *)markStr
+{
+    //取得标记
+    NSRange range = [self rangeOfString:markStr];
+    return [self substringFromIndex:(range.location + range.length)];
+}
+
 
 @end

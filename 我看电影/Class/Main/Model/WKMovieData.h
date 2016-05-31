@@ -49,7 +49,7 @@
 
 @end
 /**
- *  暂时无用
+ *  缩略图以及大图
  */
 @interface WKMovieAttachments : MTLModel <MTLJSONSerializing>
 
