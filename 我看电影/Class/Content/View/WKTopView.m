@@ -22,7 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor lightGrayColor];
+//        self.backgroundColor = [UIColor lightGrayColor];
         //添加label和view
         [self setLabelView];
     }
@@ -33,13 +33,13 @@
 {
     //分类标签
     UILabel *cateLabel = [[UILabel alloc] init];
-    cateLabel.font = [UIFont systemFontOfSize:20.0];
-    cateLabel.textColor = [UIColor colorWithRed:157/255.0 green:157/255.0 blue:157/255.0 alpha:1.0];
+    cateLabel.font = WKMovieDetailCateFont;
+    cateLabel.textColor = WKMovieDetailCateColor;
     self.cateLabel = cateLabel;
     [self addSubview:cateLabel];
     //横线view
     UIView *lineView = [[UIView alloc] init];
-    lineView.backgroundColor = [UIColor grayColor];
+    lineView.backgroundColor = [UIColor blackColor];
     self.lineView = lineView;
     [self addSubview:lineView];
 }
@@ -54,7 +54,7 @@
     
     self.cateLabel.frame = movieDetailTopFrame.cateLabelFrame;
     self.lineView.frame = movieDetailTopFrame.lineViewFrame;
-    NSLog(@"%@", [NSValue valueWithCGRect:self.lineView.frame]);
+//    NSLog(@"%@", [NSValue valueWithCGRect:self.lineView.frame]);
 }
 
 @end

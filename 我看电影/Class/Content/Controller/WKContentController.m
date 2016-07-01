@@ -59,8 +59,8 @@
 - (void)setTopTitle:(NSString *)topTitle
 {
     _topTitle = topTitle;
-    if (!_topTitle) {
-        self.navigationItem.title = _topTitle;
+    if (_topTitle) {
+        self.navigationItem.title = topTitle;
     }
 }
 

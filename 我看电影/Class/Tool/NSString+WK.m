@@ -18,7 +18,7 @@
     strName = [movieCate.cateTitle mutableCopy];
     for (int index = 1; index < cateArray.count; index++) {
         movieCate = cateArray[index];
-        [strName appendString:[NSString stringWithFormat:@" / %@", movieCate.cateTitle]];
+        [strName appendString:[NSString stringWithFormat:@"/%@", movieCate.cateTitle]];
     }
     return [NSString stringWithFormat:@"分类：%@",strName];
 }

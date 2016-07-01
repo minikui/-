@@ -47,7 +47,7 @@
     
     //标题
     CGFloat titleLabelX = WKMoviePostDateBorder;
-    CGFloat titleLabelY = CGRectGetMaxY(_topViewFrame) + WKMoviePostDateBorder;
+    CGFloat titleLabelY = WKMoviePostDateBorder;
     
     NSDictionary *titleAttr = @{NSFontAttributeName : WKMovieDetailTitleFont};
     CGSize titleSize = [moviePostData.postTitle sizeWithAttributes:titleAttr];
@@ -71,19 +71,29 @@
     CGSize dateSize = [modifiedTime sizeWithAttributes:dateAttr];
     _dateLabelFrame = (CGRect){{dateLabelX, dateLabelY}, dateSize};
     
+    //配图
+    CGFloat imageViewX = authorLabelX;
+    CGFloat imageViewY = CGRectGetMaxY(_authorLabelFrame) + 2 * WKMoviePostDateBorder;
+    CGFloat imageViewWidth = topViewWidth - 2 * WKMoviePostDateBorder;
+    CGFloat imageViewHeigth = imageViewWidth * 0.7;
+    _imageViewFrame = CGRectMake(imageViewX, imageViewY, imageViewWidth, imageViewHeigth);
+    
     //内容
-    CGFloat contentLabelX = authorLabelX;
-    CGFloat contentLabelY = CGRectGetMaxY(_authorLabelFrame) + WKMoviePostDateBorder;
+    CGFloat contentLabelX = imageViewX;
+    CGFloat contentLabelY = CGRectGetMaxY(_imageViewFrame) + 2 * WKMoviePostDateBorder;
 #warning 重新利用模型
     //UILabel展示html内容
-    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[moviePostData.postContent dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType} documentAttributes:nil error:nil];
-    NSString *start = @"剧情";
-    NSRange range = [attrStr.string rangeOfString:start];
-    NSLog(@"%@", [NSValue valueWithRange:range]);
-    NSString *res = [attrStr.string stringCutWithMark:start];
+
+    NSString *markStr = @"</p>";
+    NSString *contStr = [moviePostData.postContent stringCutWithMark:markStr];
     
-    CGSize contentSize = CGSizeMake(topViewWidth, CGFLOAT_MAX);
-    CGRect contRect = [attrStr boundingRectWithSize:contentSize options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil];
+    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[contStr dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+
+    CGSize contentSize = CGSizeMake(topViewWidth - 2 * WKMoviePostDateBorder, CGFLOAT_MAX);
+    NSMutableAttributedString *muAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:attrStr];
+    [muAttrStr addAttribute:NSFontAttributeName value:WKMovieDetailContentFont range:NSMakeRange(0, attrStr.length)];
+    CGRect contRect = [muAttrStr boundingRectWithSize:contentSize options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil];
+//    CGRect contRect = [attrStr.string boundingRectWithSize:contentSize options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : WKMovieDetailContentFont} context:nil];
     _contentLabelFrame = (CGRect){{contentLabelX, contentLabelY}, contRect.size};
     
     //标签

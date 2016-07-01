@@ -8,6 +8,7 @@
 
 #import "WKBottomView.h"
 #import "NSString+WK.h"
+#import "UIImageView+WebCache.h"
 
 @interface WKBottomView ()
 
@@ -16,6 +17,7 @@
 @property(weak, nonatomic) UILabel *dateLabel;
 @property(weak, nonatomic) UILabel *contentLabel;
 @property(weak, nonatomic) UILabel *tagLabel;
+@property(weak, nonatomic) UIImageView *imageView;
 
 @end
 
@@ -25,7 +27,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+//        self.backgroundColor = [UIColor grayColor];
         //添加label和view
         [self setLabels];
     }
@@ -36,35 +38,39 @@
 {
     //标题
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.font = [UIFont systemFontOfSize:22.0];
-    titleLabel.textColor = [UIColor colorWithRed:52/255.0 green:52/255.0 blue:52/255.0 alpha:1.0];
-    titleLabel.backgroundColor = [UIColor orangeColor];
+    titleLabel.font = WKMovieDetailTitleFont;
+    titleLabel.textColor = WKMovieDetailTitleColor;
+//    titleLabel.backgroundColor = [UIColor orangeColor];
     self.titleLable = titleLabel;
     [self addSubview:titleLabel];
     //作者
     UILabel *authorLabel = [[UILabel alloc] init];
-    authorLabel.font = [UIFont systemFontOfSize:12.0];
-    authorLabel.textColor = [UIColor colorWithRed:154/255.0 green:154/255.0 blue:154/255.0 alpha:1.0];
+    authorLabel.font = WKMovieDetailAuthorFont;
+    authorLabel.textColor = WKMovieDetailAuthorColor;
     self.authorLabel = authorLabel;
     [self addSubview:authorLabel];
     //时间
     UILabel *dateLabel = [[UILabel alloc] init];
-    dateLabel.font = [UIFont systemFontOfSize:12.0];
-    dateLabel.textColor = [UIColor colorWithRed:154/255.0 green:154/255.0 blue:154/255.0 alpha:1.0];
+    dateLabel.font = WKMovieDetailAuthorFont;
+    dateLabel.textColor = WKMovieDetailAuthorColor;
     self.dateLabel = dateLabel;
     [self addSubview:dateLabel];
+    //正文配图
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView = imageView;
+    [self addSubview:imageView];
     //正文
     UILabel *contentLabel = [[UILabel alloc] init];
     contentLabel.numberOfLines = 0;
     contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    contentLabel.font = [UIFont systemFontOfSize:22.0];
-    contentLabel.textColor = [UIColor colorWithRed:100/255.0 green:100/255.0 blue:100/255.0 alpha:1.0];
+//    contentLabel.textColor = ;
     self.contentLabel = contentLabel;
     [self addSubview:contentLabel];
     //标签
     UILabel *tagLabel = [[UILabel alloc] init];
-    tagLabel.font = [UIFont systemFontOfSize:14.0];
-    tagLabel.textColor = [UIColor colorWithRed:177/255.0 green:177/255.0 blue:177/255.0 alpha:1.0];
+    tagLabel.font = WKMovieDetailTagFont;
+    tagLabel.textColor = WKMovieDetailTagColor;
     self.tagLabel = tagLabel;
     [self addSubview:tagLabel];
 }
@@ -76,9 +82,28 @@
     self.titleLable.text = movieDetailBottomFrame.moviePostData.postTitle;
     self.authorLabel.text = [NSString stringWithFormat:@"BY:%@", movieDetailBottomFrame.moviePostData.postAuthor.authorName];
     self.dateLabel.text = [NSString stringWithFormat:@"at:%@", movieDetailBottomFrame.moviePostData.postModified];
+
+    //配图
+    NSArray *attach = movieDetailBottomFrame.moviePostData.attachments;
+    WKMovieAttachments *movieAttach = [[WKMovieAttachments alloc] init];
+    if (attach.count > 1) {
+        movieAttach = [attach lastObject];
+    } else {
+        movieAttach = [attach firstObject];
+    }
+    [self.imageView sd_setImageWithURL:movieAttach.imageURL placeholderImage:[UIImage imageNamed:@"placeHolder"]];
+    
     //UILabel展示html内容
-    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[movieDetailBottomFrame.moviePostData.postContent dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType, NSFontAttributeName : WKMovieDetailContentFont} documentAttributes:nil error:nil];
-    self.contentLabel.attributedText = attrStr;
+    NSString *markStr = @"</p>";
+    NSString *contStr = [movieDetailBottomFrame.moviePostData.postContent stringCutWithMark:markStr];
+    
+    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[contStr dataUsingEncoding:NSUnicodeStringEncoding] options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+    NSMutableAttributedString *muAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:attrStr];
+    [muAttrStr addAttribute:NSFontAttributeName value:WKMovieDetailContentFont range:NSMakeRange(0, attrStr.length)];
+    [muAttrStr addAttribute:NSForegroundColorAttributeName value:WKMovieDetailContentColor range:NSMakeRange(0, attrStr.length)];
+    
+    self.contentLabel.attributedText = muAttrStr;
+    
     NSArray *postTag = movieDetailBottomFrame.moviePostData.postTags;
     NSString *tagName = [NSString stringWithTagArray:postTag];
     self.tagLabel.text = tagName;
@@ -86,9 +111,10 @@
     self.titleLable.frame = movieDetailBottomFrame.titleLabelFrame;
     self.authorLabel.frame = movieDetailBottomFrame.authorLabelFrame;
     self.dateLabel.frame = movieDetailBottomFrame.dateLabelFrame;
+    self.imageView.frame = movieDetailBottomFrame.imageViewFrame;
     self.contentLabel.frame = movieDetailBottomFrame.contentLabelFrame;
     self.tagLabel.frame = movieDetailBottomFrame.tagLabelFrame;
-    NSLog(@"%@", [NSValue valueWithCGRect:self.titleLable.frame]);
+//    NSLog(@"%@", [NSValue valueWithCGRect:self.titleLable.frame]);
 }
 
 @end
